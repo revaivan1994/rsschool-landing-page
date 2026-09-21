@@ -97,7 +97,7 @@
 }
 
 .burger {
-  display: none;         
+  display: none;
   place-items: center;
   width: 44px;
   height: 44px;
@@ -120,11 +120,77 @@
   outline-offset: 2px;
 }
 
+.nav__item--menu {
+  display: none;
+}
+
+.burger__icon--close {
+  display: none;
+}
+
+.burger[aria-expanded="true"] .burger__icon--open {
+  display: none;
+}
+
+.burger[aria-expanded="true"] .burger__icon--close {
+  display: block;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
 @media (max-width: 1024px) {
-  .nav,
   .menu-link { display: none; }
 
   .burger { display: grid; }
 
   .header__actions { gap: 24px; }
+
+  .logo,
+  .header__actions {
+    position: relative;
+    z-index: 20;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-page);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .nav.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    text-align: center;
+  }
+
+  .nav__link {
+    font-size: 28px;
+  }
+
+  .nav__item--menu {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .nav__link--menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
 }
