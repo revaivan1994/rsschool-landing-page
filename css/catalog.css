@@ -1,0 +1,109 @@
+/* catalog */
+
+.menu__title {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px 0 8px;
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.tab__icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--border-primary);
+}
+
+.tab.is-active {
+  border-color: var(--background-container);
+  background: var(--background-container);
+  color: var(--text-inverse);
+}
+
+.tab:hover:not(.is-active) {
+  border-color: var(--text-accent);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-primary);
+  border-radius: 30px;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card__name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card__text {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.card__price {
+  margin-top: auto;  
+  padding-top: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+.menu-link[aria-current="page"] {
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+}
