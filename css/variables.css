@@ -1,0 +1,46 @@
+:root {
+  --color-sand-100: #e1d4c9;
+  --color-sand-300: #c1b6ad;
+  --color-clay-500: #b0907a;
+  --color-stone-600: #665f55;
+  --color-stone-700: #403f3d;
+  --color-stone-900: #292826;
+
+  --container-width: 1360px;
+  --gutter: 40px;
+  --header-height: 60px;
+  --transition: 0.2s ease;
+
+  --font-family: "Inter", sans-serif;
+  --second-family: "Manrope", sans-serif;
+}
+
+:root {
+  --text-primary: var(--color-stone-700);
+  --text-inverse: var(--color-sand-100);
+  --text-accent: var(--color-clay-500);
+
+  --background-page: var(--color-sand-100);
+  --background-container: var(--color-stone-600);
+  --background-overlay: rgba(64, 63, 61, 0.8);
+  --background-modal: var(--color-sand-100);
+  --background-modal-control: var(--color-stone-600);
+
+  --border-primary: var(--color-sand-300);
+  --border-inverse: var(--color-stone-600);
+}
+
+:root[data-theme="dark"] {
+  --text-primary: var(--color-sand-100);
+  --text-inverse: var(--color-sand-100);
+  --text-accent: var(--color-clay-500);
+
+  --background-page: var(--color-stone-900);
+  --background-container: var(--color-stone-700);
+  --background-overlay: rgba(41, 40, 38, 0.8);
+  --background-modal: var(--color-stone-700);
+  --background-modal-control: var(--color-stone-900);
+
+  --border-primary: var(--color-stone-600);
+  --border-inverse: var(--color-sand-300);
+}

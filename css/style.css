@@ -1,0 +1,53 @@
+@import "./header.css";
+@import "./hero.css";
+@import "./slider.css";
+@import "./about.css";
+@import "./mobile.css";
+@import "./footer.css";
+@import "./catalog.css";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--background-page);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 100px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  border-radius: 999px;
+  background-color: var(--text-inverse);
+  color: var(--color-stone-700);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--text-accent);
+  color: var(--text-inverse);
+}
+
+
