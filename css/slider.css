@@ -136,6 +136,68 @@
   background: var(--border-inverse);
 }
 
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 42px;
+  }
+
+  .slider__img {
+    height: 320px;
+    margin-bottom: 24px;
+  }
+
+  .slider__name {
+    font-size: 22px;
+  }
+
+  .slider__text {
+    font-size: 15px;
+  }
+
+  .slider__arrow {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-title {
+    font-size: 32px;
+  }
+
+  .slider {
+    margin-top: 24px;
+  }
+
+  .slider__img {
+    height: 240px;
+    margin-bottom: 20px;
+  }
+
+  .slider__name {
+    font-size: 20px;
+  }
+
+  .slider__text {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .slider__price {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  .slider__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slider__dot {
+    width: 32px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .slider__track {
     transition: none;

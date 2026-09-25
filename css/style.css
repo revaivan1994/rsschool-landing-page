@@ -50,4 +50,29 @@ body {
   color: var(--text-inverse);
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+
+  .btn {
+    width: 180px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: min(100% - 2 * 20px, var(--container-width));
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
 

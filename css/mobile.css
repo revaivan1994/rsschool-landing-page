@@ -92,6 +92,63 @@
   }
 }
 
+@media (max-width: 768px) {
+  .app__title {
+    font-size: 44px;
+  }
+
+  .app__text {
+    font-size: 15px;
+  }
+
+  .app__stores {
+    gap: 12px;
+  }
+
+  .store-btn {
+    width: 180px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 380px) {
+  .app__title {
+    font-size: 32px;
+  }
+
+  .app__text {
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  .app__stores {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .store-btn {
+    width: 100%;
+    min-width: 0;
+    height: 54px;
+    padding: 0 14px;
+  }
+
+  .store-btn svg,
+  .store-btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .store-btn__hint {
+    font-size: 10px;
+  }
+
+  .store-btn__name {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 600px) {
   .app__text {
     font-size: 14px;

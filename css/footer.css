@@ -92,6 +92,64 @@ a.contacts__text:focus-visible {
   outline-offset: 2px;
 }
 
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 60px 40px;
+  }
+
+  .footer__title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer__inner {
+    gap: 24px;
+    padding: 32px 20px;
+    border-radius: 24px;
+  }
+
+  .footer__title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .socials {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .socials__link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .socials__link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer__subtitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .contacts {
+    gap: 16px;
+  }
+
+  .contacts__item svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .contacts__text {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 600px) {
   .footer__inner {
     gap: 48px;

@@ -37,11 +37,29 @@
 
 @media (max-width: 790px) {
   .about__gallery {
-    grid-template-columns: 1fr;  
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .about__img--short {
-    display: none;                
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__title {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  .about__title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .about__gallery {
+    margin-top: 24px;
+    gap: 16px;
   }
 }
