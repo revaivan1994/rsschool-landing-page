@@ -1,0 +1,258 @@
+/* header */
+
+.header {
+  padding: 20px 0 40px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.logo {
+  display: flex;
+  color: var(--text-primary);
+}
+
+.nav__list {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--text-accent);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.theme-toggle {
+  display: flex;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 88px;
+  height: 44px;
+  padding: 3px;
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
+}
+
+.theme-toggle__btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.theme-toggle__btn svg {
+  display: block;
+}
+
+.theme-toggle__btn.is-active {
+  background: var(--text-accent);
+  color: var(--color-sand-100);
+}
+
+.theme-toggle__btn:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.menu-link:hover {
+  color: var(--text-accent);
+}
+
+.burger {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-inverse);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.burger:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+}
+
+.burger:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+.nav__item--menu {
+  display: none;
+}
+
+.burger__icon--close {
+  display: none;
+}
+
+.burger[aria-expanded="true"] .burger__icon--open {
+  display: none;
+}
+
+.burger[aria-expanded="true"] .burger__icon--close {
+  display: block;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+@media (max-width: 1024px) {
+  .menu-link { display: none; }
+
+  .burger { display: grid; }
+
+  .header__actions { gap: 24px; }
+
+  .logo,
+  .header__actions {
+    position: relative;
+    z-index: 20;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-page);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .nav.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    text-align: center;
+  }
+
+  .nav__link {
+    font-size: 28px;
+  }
+
+  .nav__item--menu {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .nav__link--menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 0 28px;
+  }
+
+  .header__actions {
+    gap: 16px;
+  }
+
+  .logo svg {
+    width: 88px;
+    height: 52px;
+  }
+
+  .theme-toggle {
+    width: 80px;
+    height: 40px;
+  }
+
+  .theme-toggle__btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header {
+    padding: 12px 0 20px;
+  }
+
+  .header__inner {
+    height: auto;
+  }
+
+  .header__actions {
+    gap: 12px;
+  }
+
+  .theme-toggle {
+    width: 72px;
+    height: 36px;
+  }
+
+  .theme-toggle__btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .burger {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav__list {
+    gap: 42px;
+  }
+
+  .nav__link {
+    font-size: 24px;
+  }
+}
