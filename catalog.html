@@ -249,6 +249,53 @@
       </div>
     </div>
   </footer>
+
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close-icon" type="button" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" aria-hidden="true">
+          <path d="M5 5l10 10M15 5L5 15" />
+        </svg>
+      </button>
+
+      <img class="modal__img" id="modal-img" src="" alt="">
+
+      <div class="modal__content">
+        <h2 class="modal__title" id="modal-title"></h2>
+        <p class="modal__text" id="modal-text"></p>
+
+        <div class="modal__group">
+          <h3 class="modal__label">Size</h3>
+          <div class="modal__options" id="modal-sizes"></div>
+        </div>
+
+        <div class="modal__group">
+          <h3 class="modal__label">Additives</h3>
+          <div class="modal__options" id="modal-additives"></div>
+        </div>
+
+        <div class="modal__total">
+          <span>Total:</span>
+          <span id="modal-total"></span>
+        </div>
+
+        <p class="modal__note">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"
+            aria-hidden="true">
+            <circle cx="10" cy="10" r="8" />
+            <path d="M10 9v4M10 6.5v.01" />
+          </svg>
+          The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty
+          points and enjoy your favorite coffee with up to 20% discount.
+        </p>
+
+        <button class="btn modal__close" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
