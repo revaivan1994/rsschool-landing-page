@@ -75,4 +75,149 @@ body {
   }
 }
 
+/* modal */
 
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--background-overlay);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.modal-overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  width: min(1000px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 40px;
+  background: var(--background-modal);
+  color: var(--text-primary);
+}
+
+.modal__close-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--background-modal-control);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.modal__img {
+  width: 40%;
+  object-fit: cover;
+  border-radius: 40px 0 0 40px;
+}
+
+.modal__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+}
+
+.modal__title { font-size: 28px; font-weight: 600; }
+.modal__label { margin-bottom: 12px; font-size: 14px; font-weight: 600; }
+
+.modal__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.option__badge {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--border-primary);
+  font-size: 12px;
+}
+
+.option.is-active {
+  border-color: var(--background-container);
+  background: var(--background-container);
+  color: var(--text-inverse);
+}
+
+.option.is-active .option__badge {
+  background: var(--text-inverse);
+  color: var(--background-container);
+}
+
+.modal__total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-primary);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal__note {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.modal__close { width: 100%; }
+
+@media (max-width: 768px) {
+  .modal { width: min(656px, 100%); }
+  .modal__content { padding: 24px; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    flex-direction: column;
+    max-height: 95vh;
+    border-radius: 24px;
+  }
+  .modal__img {
+    width: 100%;
+    height: 220px;
+    border-radius: 24px 24px 0 0;
+  }
+}
