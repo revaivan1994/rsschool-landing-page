@@ -26,10 +26,20 @@ function attachImages() {
 const grid = document.querySelector('.menu__grid');
 const tabs = document.querySelectorAll('.tab');
 
-function render(category) {
-  const items = products.filter((p) => p.category === category);
+const INITIAL_COUNT = 4;
+const mq = window.matchMedia('(max-width: 768px)');
+const loadMoreBtn = document.querySelector('.load-more');
 
-  grid.innerHTML = items
+let currentCategory = 'coffee';
+let expanded = false;
+
+function render(category) {
+  currentCategory = category;
+  const items = products.filter((p) => p.category === category);
+  const showAll = !mq.matches || expanded;
+  const visible = showAll ? items : items.slice(0, INITIAL_COUNT);
+
+  grid.innerHTML = visible
     .map(
       (p) => `
         <li>
@@ -44,7 +54,31 @@ function render(category) {
         </li>`
     )
     .join('');
+
+  loadMoreBtn.hidden = showAll || items.length <= INITIAL_COUNT;
 }
+
+loadMoreBtn.addEventListener('click', () => {
+  expanded = true;
+  render(currentCategory);
+});
+
+tabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    tabs.forEach((t) => {
+      const active = t === tab;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-pressed', String(active));
+    });
+    expanded = false;            
+    render(tab.dataset.category);
+  });
+});
+
+mq.addEventListener('change', (e) => {
+  if (e.matches) expanded = false; 
+  render(currentCategory);
+});
 
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
